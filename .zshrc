@@ -98,7 +98,26 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias l='exa -l'
+alias ll='exa -l'
+alias la='exa -la'
+
+#
+# fzf
+FZF_DEFAULT_OPTS="--reverse --border"
+FZF_DEFAULT_COMMAND='fd --type f'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+#
+# tmux
+TERM=screen-256color
+if [ -z "$TMUX" ]; then
+  SESSIONID=$(whoami)
+  if tmux has-session -t $SESSIONID 2>/dev/null; then
+        tmux -2 attach-session -t $SESSIONID
+    else
+        tmux -2 new-session -s $SESSIONID
+    fi
+fi
 
