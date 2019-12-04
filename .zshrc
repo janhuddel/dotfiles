@@ -8,10 +8,10 @@ export ZSH="/home/jan/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="muse"
 
 # Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
+# Setting this variable when ZSH_THEME="spaceship"
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
@@ -108,20 +108,30 @@ fi
 
 #
 # fzf
-FZF_DEFAULT_OPTS="--reverse --border"
-FZF_DEFAULT_COMMAND='fd --type f'
+if type "fzf" > /dev/null; then
+  export FZF_DEFAULT_OPTS="--reverse --border"
+  export FZF_DEFAULT_COMMAND='fd --type f'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
 
 #
 # tmux
-TERM=screen-256color
-if [ -z "$TMUX" ]; then
-  SESSIONID=$(whoami)
-  if tmux has-session -t $SESSIONID 2>/dev/null; then
-        tmux -2 attach-session -t $SESSIONID
+if type "tmux" > /dev/null; then
+  TERM=screen-256color
+  if [ -z "$TMUX" ]; then
+    SESSIONID=$(whoami)
+    if tmux has-session -t $SESSIONID 2>/dev/null; then
+      tmux -2 attach-session -t $SESSIONID
     else
-        tmux -2 new-session -s $SESSIONID
+      tmux -2 new-session -s $SESSIONID
     fi
+  fi
 fi
 
+#
+# go
+if type "go" > /dev/null; then
+  export GOPATH=~/dev/Go
+  export PATH=$PATH:$GOPATH/bin
+fi
