@@ -116,8 +116,8 @@ if type "fzf" > /dev/null; then
 fi
 
 #
-# tmux
-if type "tmux" > /dev/null; then
+# start tmux (only in remote sessions)
+if [ -n "$SSH_CLIENT" ] && (type "tmux" > /dev/null); then
   TERM=screen-256color
   if [ -z "$TMUX" ]; then
     SESSIONID=$(whoami)
