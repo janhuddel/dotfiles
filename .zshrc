@@ -103,6 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+#
+# node setup
+if type "nodejs" > /dev/null; then
+  export NPM_CONFIG_PREFIX=~/.npm-global
+fi
+
+#
 # exa-aliases
 if type "exa" > /dev/null; then
   alias l='exa -l'
