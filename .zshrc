@@ -105,7 +105,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 #
 # node setup
-if type "nodejs" > /dev/null; then
+if type "npm" > /dev/null; then
   export NPM_CONFIG_PREFIX=~/.npm-global
 fi
 
