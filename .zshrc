@@ -11,9 +11,7 @@ GIT_EXE=$(which git)
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
-if [ -d ~/.zsh-autosuggestions ]; then
-  source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+[[ -d ~/.zsh-autosuggestions ]] && source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fzf (https://github.com/junegunn/fzf#using-git)
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
