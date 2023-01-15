@@ -1,0 +1,6 @@
+# Das ist Gits benutzerspezifische Konfigurationsdatei.
+[user]
+	name = Jan Rohwer
+	email = jan.rohwer@gmail.com
+[init]
+	defaultBranch = main
