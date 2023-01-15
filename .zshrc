@@ -7,6 +7,16 @@ bindkey -e
 
 GIT_EXE=$(which git)
 
+# dotfiles aware git
+git() {
+  if [ "$PWD" = "$HOME" ]; then
+    command git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+  else
+    command git "$@"
+  fi
+}
+
+# other includes
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 

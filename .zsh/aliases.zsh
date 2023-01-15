@@ -1,4 +1,4 @@
-alias dotfiles='$GIT_EXE --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#alias dotfiles='$GIT_EXE --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias ..="cd .."
 alias ls="exa --icons --group-directories-first"
