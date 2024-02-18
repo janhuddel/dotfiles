@@ -2,7 +2,7 @@ add_newline = false
 command_timeout = 1500
 
 format = """(\\[$username$hostname\\] )$directory$character"""
-right_format = """$git_branch$git_status$nodejs$golang"""
+right_format = """$git_branch$git_status$ruby$nodejs$golang"""
 
 [directory]
 truncation_length = 3
@@ -28,7 +28,12 @@ format = "on [$symbol$branch]($style) "
 
 [nodejs]
 symbol = ""
-format = 'via [$symbol ($version)]($style)'
+format = "via [$symbol ($version)]($style)"
 
 [golang]
 symbol = ""
+
+[ruby]
+symbol = "\ue21e"
+format = "via [$symbol ($version)]($style)"
+detect_variables = []
