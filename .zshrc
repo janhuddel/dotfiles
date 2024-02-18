@@ -31,7 +31,7 @@ git() {
 
 # other includes
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
-[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
+#[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 [[ -f ~/.zsh/auto-complete.zsh ]] && source ~/.zsh/auto-complete.zsh
 
 # Load Starship
