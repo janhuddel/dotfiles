@@ -1,14 +1,9 @@
-#alias dotfiles='$GIT_EXE --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 alias ..="cd .."
-alias ls="exa --icons --group-directories-first"
-alias ll="exa --icons --group-directories-first -l"
-alias la="exa --icons --group-directories-first -la"
-
-# docker
-alias dc="docker compose"
-alias dps="docker ps"
-alias dpi="docker image"
+alias home="cd ~ && clear"
+alias cls="clear"
+alias ls="eza --group-directories-first"
+alias ll="eza --group-directories-first -l"
+alias la="eza --group-directories-first -la"
 
 # git
 alias gst="git status"
